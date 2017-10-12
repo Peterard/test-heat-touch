@@ -52,6 +52,14 @@ function draw() {
 
 draw();
 
+$('#canvas').bind('touchstart', checkCoords );
+
+function checkCoords(e){
+  alert(e.originalEvent.targetTouches);
+  alert(e.originalEvent.touches);
+  alert(e.originalEvent.changedTouches);
+}
+
 canvas.onmousemove = function (e) {
   heat.clear();
   var heat = simpleheat('canvas').data(data).max(10),
